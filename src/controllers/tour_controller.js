@@ -4,6 +4,8 @@ import {v4 as uuidv4} from 'uuid'
 
 import {v2 as cloudinary} from 'cloudinary'
 
+import fs from 'fs-extra'
+
 
 const getAllToursControllers = async(req,res) => {
     const tours = await tourModel.getAllToursModel()
@@ -36,11 +38,12 @@ const createTourController = async (req,res) => {
         const cloudinaryResponse = await cloudinary.uploader.upload(req.files.image.tempFilePath,{folder:"tours"})
 
         newTourData.image = cloudinaryResponse.url
-
         newTourData.public_id = cloudinaryResponse.public_id
 
-
         const tour = await tourModel.createTourModel(newTourData)
+
+        await fs.unlink(req.files.image.tempFilePath)
+
         res.status(201).json(tour)
     } catch (error) {
         res.status(500).json(error)
@@ -61,7 +64,15 @@ const updateTourController = async(req,res) => {
 const deleteTourController = async (req,res) => { 
     const {id} = req.params
     try {
+
+        // Obener el Tour por ID
+        const tourFind = await tourModel.getTourByIdModel(id)
+
+        // Eliminar la imagen de Cloudinary
+        await cloudinary.uploader.destroy(tourFind.public_id)
+
         await tourModel.deleteTourModel(id)
+
         res.status(200).json({msg:"Tour eliminado"})
     } catch (error) {
         res.status(500).json(error)

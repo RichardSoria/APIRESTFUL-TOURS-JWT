@@ -14,24 +14,18 @@
       "precio": 50
     },
     {
-      "id": "2",
-      "nombre": "Tour Quilotoa",
-      "descripcion": "Explora la maravillosa laguna del Quilotoa",
-      "tipo": "Volcán",
-      "ciudad": "Latacunga",
-      "fechaInicio": "10/04/2024",
-      "fechaFin": "12/04/2024",
-      "duracion": "2 días",
-      "maxParticipantes": 8,
-      "imagen": "https://i.ytimg.com/vi/OaOQ_uO2VNE/maxresdefault.jpg",
-      "precio": 50
+      "id": "6b3fc446-0194-4951-bf0c-a1b0930a08b7",
+      "name": "Tour-Cuenca",
+      "price": "15",
+      "image": "http://res.cloudinary.com/dmugesxea/image/upload/v1732564772/tours/hyz1ahsjkdv6vjs0njff.jpg",
+      "public_id": "tours/hyz1ahsjkdv6vjs0njff"
     },
     {
-      "id": "89d3c644-fc46-4e88-929c-caa6d9b53a66",
-      "name": "Tour-Quilotoa",
-      "price": "20",
-      "image": "http://res.cloudinary.com/dmugesxea/image/upload/v1732561981/tours/zj8guj15uadjndsqpi46.jpg",
-      "public_id": "tours/zj8guj15uadjndsqpi46"
+      "id": "d1b8807a-3ad9-42a2-b67c-936d9f181a1e",
+      "name": "Tour-Cuenca",
+      "price": "15",
+      "image": "http://res.cloudinary.com/dmugesxea/image/upload/v1732565156/tours/si9mew3ouvwrk3g7b1na.jpg",
+      "public_id": "tours/si9mew3ouvwrk3g7b1na"
     }
   ],
   "users": [
